@@ -27,6 +27,7 @@ Whether you are looking for simple sensor readings, complex servo/motor control 
  ┃ ┗ 📂 Temperature_DHT11
  ┣ 📂 Full_Projects
  ┃ ┗ 📂 Smart_Plant_Pot_IoT    # Complex projects combining multiple hardware
+ ┣ 📂 Sensors
  ┣ 📜 .gitignore
  ┣ 📜 LICENSE
  ┗ 📜 README.md
