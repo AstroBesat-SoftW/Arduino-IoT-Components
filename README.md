@@ -11,3 +11,19 @@ Whether you are looking for simple sensor readings, complex servo/motor control 
 * ⚙️ **Actuators:** Precision control for servo motors, DC motors, and stepper motors.
 * 🌡️ **Sensors:** Environmental, motion, and distance sensor integrations.
 * 🧠 **Algorithms:** Logic circuits and optimized data processing for microcontrollers.
+
+* 📦 arduino-iot-components
+ ┣ 📂 ESP8266
+ ┃ ┣ 📂 Web_Server_Basic
+ ┃ ┗ 📂 Firebase_Integration
+ ┣ 📂 Actuators
+ ┃ ┣ 📂 Servo_Motor_Control
+ ┃ ┗ 📂 DC_Motor_L298N
+ ┣ 📂 Sensors
+ ┃ ┣ 📂 Ultrasonic_HCSR04
+ ┃ ┗ 📂 Temperature_DHT11
+ ┣ 📂 Full_Projects
+ ┃ ┗ 📂 Smart_Plant_Pot_IoT (Farklı donanımların birleştiği projeler için)
+ ┣ 📜 .gitignore
+ ┣ 📜 LICENSE
+ ┗ 📜 README.md
