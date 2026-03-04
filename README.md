@@ -12,7 +12,10 @@ Whether you are looking for simple sensor readings, complex servo/motor control 
 * 🌡️ **Sensors:** Environmental, motion, and distance sensor integrations.
 * 🧠 **Algorithms:** Logic circuits and optimized data processing for microcontrollers.
 
-* 📦 arduino-iot-components
+### 📂 Repository Structure
+
+```text
+📦 arduino-iot-components
  ┣ 📂 ESP8266
  ┃ ┣ 📂 Web_Server_Basic
  ┃ ┗ 📂 Firebase_Integration
@@ -23,7 +26,8 @@ Whether you are looking for simple sensor readings, complex servo/motor control 
  ┃ ┣ 📂 Ultrasonic_HCSR04
  ┃ ┗ 📂 Temperature_DHT11
  ┣ 📂 Full_Projects
- ┃ ┗ 📂 Smart_Plant_Pot_IoT (Farklı donanımların birleştiği projeler için)
+ ┃ ┗ 📂 Smart_Plant_Pot_IoT    # Complex projects combining multiple hardware
  ┣ 📜 .gitignore
  ┣ 📜 LICENSE
  ┗ 📜 README.md
+```
