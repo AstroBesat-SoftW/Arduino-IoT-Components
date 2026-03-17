@@ -60,23 +60,21 @@ float distanceCm;
 
 
 
-#define WIFI_SSID "bitki"
-#define WIFI_PASSWORD "12345678"
+#define WIFI_SSID "wifi name"
+#define WIFI_PASSWORD "sifre "
 
-//#define WIFI_SSID "TurkTelekom_ZT2SY3_2.4GHz"
-//#define WIFI_PASSWORD "F7KdXDsUEUyF"
 
 // For the following credentials, see examples/Authentications/SignInAsUser/EmailPassword/EmailPassword.ino
 
 /* API Key */
-#define API_KEY "AIzaSyBoxRegOGoFTDkG956NTl6Yo46KfCJFa5g"
+#define API_KEY "buraya firebase api keyi"
 
 /* RTDB URL */
-#define DATABASE_URL "ziraat-771bd-default-rtdb.firebaseio.com" //<databaseName>.firebaseio.com or <databaseName>.<region>.firebasedatabase.app
+#define DATABASE_URL " firebase url" //<databaseName>.firebaseio.com or <databaseName>.<region>.firebasedatabase.app
 
 /* 4.  kullanıcı Email ve şifre  */
-#define USER_EMAIL "ziraatprojem@gmail.com"
-#define USER_PASSWORD "ziraatprojesi123"
+#define USER_EMAIL "firebase kullanıcı @gmail.com"
+#define USER_PASSWORD "firabE kullanıco şifresi"
 
 // Firebase Veri nesnesini tanımlayın
 FirebaseData fbdo;
@@ -254,135 +252,14 @@ if (isulamik == 1 && WiFi.status() == WL_CONNECTED) {
   }
 
 
-/*
- * 
- * 
- *  
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
-void loop() {
-  delay(500);
-  float x;
-  float y;
 
-  digitalWrite(trigPin, LOW);
-  delayMicroseconds(2);
-  digitalWrite(trigPin, HIGH);
-  delayMicroseconds(10);
-  digitalWrite(trigPin, LOW);
-
-  long duration = pulseIn(echoPin, HIGH);
-  long distanceCm = duration * SOUND_VELOCITY / 2;
-
-  total = total - readings[diziIndex];
-  readings[diziIndex] = distanceCm;
-  total = total + readings[diziIndex];
-
-  diziIndex = (diziIndex + 2) % NUM_READINGS;
-
-  //long averageDistance = (total / NUM_READINGS  ) ; 
-
-  long averageDistance = (total / NUM_READINGS  ); // /4 sil sonra
-
-  Serial.println("Ortalama Mesafe: " + String(averageDistance) + " cm");
-
-if (sayac >= 1 && sayac <= 120) {
-  double angle = (sayac - 1) * (M_PI / 60.0); // Her seferinde 3 derece arttır
-  x = averageDistance * cos(angle);
-  y = averageDistance * sin(angle);
-
-  if (Firebase.ready()) {
-    Serial.println("Ölçüm sayısı: -------------" + String(sayac));
-    FirebaseJson json2;
-    String xKey = "/test/json/olcum/deger" + String(sayac) + "/x";
-    String yKey = "/test/json/olcum/deger" + String(sayac) + "/y";
-    Firebase.setDouble(fbdo, xKey.c_str(), x);
-    Firebase.setDouble(fbdo, yKey.c_str(), y);
-    Serial.println("Ölçüm değeri: " + String(averageDistance));
-  }
-}
-
-sayac += 1;
-if (sayac > 251) {
-  sayac = 1; // 120'den sonra tekrar 1'e dön
-}
-*/
+  
 
 
-/*
-  if (sayac >= 1 && sayac <= 12) {
-    double angle = (sayac - 1) * (M_PI / 6.0);
-    x = averageDistance * cos(angle);
-    y = averageDistance * sin(angle);
 
-    if (Firebase.ready()) {
-      FirebaseJson json2;
-      String xKey = "/test/json/olcum/deger" + String(sayac) + "/x";
-      String yKey = "/test/json/olcum/deger" + String(sayac) + "/y";
-      Firebase.setDouble(fbdo, xKey.c_str(), x);
-      Firebase.setDouble(fbdo, yKey.c_str(), y);
-      Serial.println("Ölçüm değeri: " + String(averageDistance));
-    }
-  } else if (sayac == 20) {
-    sayac = 0;
-  }
-
-  sayac += 1;
-
-  */
 }
 
 
 
-/*
-void loop() {
-  delay(500); // 0.5 saniye bekle
-  float x;
-  float y;
 
-    digitalWrite(trigPin, LOW);
-  delayMicroseconds(2);
-  digitalWrite(trigPin, HIGH);
-  delayMicroseconds(10);
-  digitalWrite(trigPin, LOW);
-
-  duration = pulseIn(echoPin, HIGH);
-  distanceCm = duration * SOUND_VELOCITY / 2;
-  Serial.println(sayac);
-  sayac += 1;
-
-  if (sayac >= 40 && sayac <= 80) {
-    double angle = (sayac - 1) * (M_PI / 6.0);
-    x = distanceCm * cos(angle);
-    y = distanceCm * sin(angle);
-
-    if (Firebase.ready()) {
-      FirebaseJson json2;
-      String xKey = "/test/json/olcum/deger" + String(sayac) + "/x";
-      String yKey = "/test/json/olcum/deger" + String(sayac) + "/y";
-      Firebase.setDouble(fbdo, xKey.c_str(), x);
-      Firebase.setDouble(fbdo, yKey.c_str(), y);
-      Serial.println("Ölçüm değeri: " + String(distanceCm));
-    }
-  } else if (sayac == 81) {
-    sayac = 0;
-  }
-}
-
-
-*/
+  
