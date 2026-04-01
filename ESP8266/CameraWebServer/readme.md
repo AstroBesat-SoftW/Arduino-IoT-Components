@@ -14,7 +14,7 @@ Get the IP address displayed in the Serial Monitor and enter it into your browse
 
 
 yüklediğim kütüphane:
-
+install library
 esp32 2.0.5
 
 dahil et: https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
