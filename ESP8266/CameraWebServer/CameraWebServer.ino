@@ -33,8 +33,8 @@
 // ===========================
 // Enter your WiFi credentials
 // ===========================
-const char* ssid = "bitki";
-const char* password = "12345678";
+const char* ssid = "wifi_name";
+const char* password = "wifi_password";
 
 void startCameraServer();
 
