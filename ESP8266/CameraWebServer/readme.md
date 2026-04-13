@@ -43,6 +43,7 @@ install library
 esp32 2.0.5
 
 dahil et: https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
+<img width="614" height="484" alt="image" src="https://github.com/user-attachments/assets/4db39bd5-9484-4484-aee5-656a168c092a" />
 
 
 <img width="1916" height="945" alt="image" src="https://github.com/user-attachments/assets/99dff9c9-a8b6-4dad-abbe-942893d70ce3" />
