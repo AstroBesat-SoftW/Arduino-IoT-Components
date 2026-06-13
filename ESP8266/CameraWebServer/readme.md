@@ -1,7 +1,7 @@
 
 ## Setup and Connection
 
-<img width="672" height="375" alt="image" src="https://github.com/user-attachments/assets/62fc3135-ed40-43bc-9a40-7873c61aae38" />
+<img width="670" height="375" alt="image" src="https://github.com/user-attachments/assets/62fc3135-ed40-43bc-9a40-7873c61aae38" />
 
 ### Important Connection Notes
 * Pay close attention to the connection marked **"i"** on the ESP32-CAM, as well as the red connection on the far left of the ESP8266 (**RST to GND**). Make sure these are connected before uploading.
