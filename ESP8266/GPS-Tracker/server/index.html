@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canlı GPS Takibi</title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <style>
+        body { margin: 0; padding: 0; font-family: Arial, sans-serif; }
+        #harita { height: 100vh; width: 100vw; }
+        #bilgi-paneli {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            z-index: 1000; /* Haritanın üstünde durması için */
+        }
+    </style>
+</head>
+<body>
+
+    <div id="bilgi-paneli">
+        <h3>📍 Canlı Konum</h3>
+        <p><b>Saat:</b> <span id="saat">-</span></p>
+        <p><b>Rakım:</b> <span id="rakim">-</span> m</p>
+        <p><b>Hız:</b> <span id="hiz">-</span> km/s</p>
+        <p><small>Son Güncelleme: <span id="son_baglanti">-</span></small></p>
+    </div>
+
+    <div id="harita"></div>
+
+    <script>
+        // Haritayı başlat (İlk açılışta Türkiye'yi göstersin)
+        var map = L.map('harita').setView([39.0, 35.0], 6);
+
+        // OpenStreetMap katmanını ekle
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap'
+        }).addTo(map);
+
+        // Haritadaki pin (marker) nesnemiz
+        var marker = null;
+
+        // Sunucudan veriyi çeken fonksiyon
+        function konumGuncelle() {
+            fetch('konum.json')
+                .then(response => response.json())
+                .then(data => {
+                    var lat = parseFloat(data.enlem);
+                    var lng = parseFloat(data.boylam);
+
+                    // Ekrana bilgileri yazdır
+                    document.getElementById('saat').innerText = data.saat;
+                    document.getElementById('rakim').innerText = data.rakim;
+                    document.getElementById('hiz').innerText = data.hiz;
+                    document.getElementById('son_baglanti').innerText = data.son_guncelleme;
+
+                    // Eğer pin yoksa oluştur, varsa sadece yerini değiştir
+                    if (marker === null) {
+                        marker = L.marker([lat, lng]).addTo(map);
+                        map.setView([lat, lng], 16); // İlk veride yakınlaş
+                    } else {
+                        marker.setLatLng([lat, lng]);
+                        map.panTo([lat, lng]); // Pini takip et
+                    }
+                })
+                .catch(error => console.error('Veri çekilemedi:', error));
+        }
+
+        // Sayfa açıldığında çalıştır ve her 3 saniyede bir tekrarla
+        konumGuncelle();
+        setInterval(konumGuncelle, 3000);
+    </script>
+</body>
+</html>
